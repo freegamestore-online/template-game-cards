@@ -197,11 +197,11 @@ export default function App() {
       {/* Footer */}
       <footer className="game-footer">
         <a
-          href="https://freeappstore.online"
+          href="https://freegamestore.online"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Part of FreeAppStore — free forever
+          Part of FreeGameStore — free forever
         </a>
       </footer>
     </div>

@@ -31,7 +31,7 @@
 - MIT license
 
 ## Platform Docs & Publishing
-- **Full AI guide:** https://freeappstore.online/skills.md
+- **Full AI guide:** https://freegamestore.online/skills.md
 - **Store registry:** ~/dev/fgs/infra/freegamestore/registry.json (add game here to list on store)
 - **Store site:** ~/dev/fgs/infra/freegamestore/ (auto-deploys on push)
 - **Deploy:** Push to main auto-deploys via GitHub Actions. No manual steps needed.
