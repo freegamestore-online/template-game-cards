@@ -3,7 +3,7 @@
 ## Platform: FreeGameStore
 - Hosted on Cloudflare R2 (static SPA, served by host Worker)
 - ONE environment only (production). No dev/staging. Fix forward, no rollbacks.
-- Push to `main` auto-deploys to production via CF Pages
+- Push to `main` auto-deploys to production via R2
 - Domain: APPNAME.freegamestore.online
 
 ## Tech Stack
