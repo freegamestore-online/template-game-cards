@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/components/card.tsx","./src/components/cardgrid.tsx","./src/components/shell.tsx","./src/hooks/usehighscore.ts","./src/hooks/usetimer.ts","./src/lib/deck.ts"],"version":"5.9.3"}

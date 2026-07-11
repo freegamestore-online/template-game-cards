@@ -11,38 +11,38 @@ importers:
   web:
     dependencies:
       '@freegamestore/games':
-        specifier: ^0.14.0
-        version: 0.14.0(react@19.2.7)
+        specifier: ^0.16.0
+        version: 0.16.0(react@19.2.7)
       react:
-        specifier: ^19
+        specifier: ^19.2.7
         version: 19.2.7
       react-dom:
-        specifier: ^19
+        specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@tailwindcss/vite':
-        specifier: ^4.1
+        specifier: ^4.3.2
         version: 4.3.2(vite@6.4.3(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0))
       '@types/node':
-        specifier: ^22
+        specifier: ^22.20.1
         version: 22.20.1
       '@types/react':
-        specifier: ^19
+        specifier: ^19.2.17
         version: 19.2.17
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
-        specifier: ^4.3
+        specifier: ^4.7.0
         version: 4.7.0(vite@6.4.3(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0))
       tailwindcss:
-        specifier: ^4.1
+        specifier: ^4.3.2
         version: 4.3.2
       typescript:
-        specifier: ^5.7
+        specifier: ^5.9.3
         version: 5.9.3
       vite:
-        specifier: ^6
+        specifier: ^6.4.3
         version: 6.4.3(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0)
 
 packages:
@@ -286,8 +286,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@freegamestore/games@0.14.0':
-    resolution: {integrity: sha512-RBtM4BnozuIVShDx5809aCPltc2ev2wp9jQTSh0lB6VxeLUBPqPtkBAm4Mk45tfgtX+kxdWDwasBy6GRrXfYGg==}
+  '@freegamestore/games@0.16.0':
+    resolution: {integrity: sha512-1gQ1zqCJ1O4MyIXbdSFg7Hv1j6Gq6TZiw2eQy4cth0CJe2rbxoNkvzjE4ZVZZ4b9OjZV8IlLdux6tsGEkzYUAw==}
     engines: {node: '>=22'}
     peerDependencies:
       react: ^19.0.0
@@ -1053,7 +1053,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
-  '@freegamestore/games@0.14.0(react@19.2.7)':
+  '@freegamestore/games@0.16.0(react@19.2.7)':
     dependencies:
       react: 19.2.7
 
