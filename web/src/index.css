@@ -44,12 +44,14 @@
   }
 }
 
-html { height: 100%; overflow: hidden; }
-
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
 }
 
-#root { height: 100svh; overflow: hidden; }
+.game-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
