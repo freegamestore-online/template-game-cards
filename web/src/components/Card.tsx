@@ -15,14 +15,11 @@ export function Card({ faceUp, matched, front, back, onClick, disabled }: Props)
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="card-container"
-      style={{
-        perspective: "1000px",
-        cursor: disabled ? "default" : "pointer",
-      }}
+      className={`card-container [perspective:1000px] ${disabled ? "cursor-default" : "cursor-pointer"}`}
     >
       <div
         className="card-inner"
+        /* dynamic: flip and matched state */
         style={{
           transform: faceUp ? "rotateY(180deg)" : "rotateY(0deg)",
           opacity: matched ? 0.7 : 1,
