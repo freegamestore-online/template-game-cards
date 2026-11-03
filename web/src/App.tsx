@@ -129,7 +129,7 @@ export default function App() {
   };
 
   return (
-    <div className="game-wrapper">
+    <div className="game-wrapper pb-[env(safe-area-inset-bottom,0px)]">
       {/* Header */}
       <header className="game-header">
         <h1 className="game-title">Memory Match</h1>
@@ -194,16 +194,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="game-footer">
-        <a
-          href="https://freegamestore.online"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Part of FreeGameStore — free forever
-        </a>
-      </footer>
     </div>
   );
 }
