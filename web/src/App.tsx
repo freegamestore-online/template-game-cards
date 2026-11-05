@@ -1,3 +1,4 @@
+import { GameShell, GameTopbar } from "@freegamestore/games";
 import { useCallback, useEffect, useState } from "react";
 import { Card } from "./components/Card";
 import { CardGrid } from "./components/CardGrid";
@@ -129,71 +130,74 @@ export default function App() {
   };
 
   return (
-    <div className="game-wrapper pb-[env(safe-area-inset-bottom,0px)]">
-      {/* Header */}
-      <header className="game-header">
-        <h1 className="game-title">Memory Match</h1>
-        <div className="game-stats">
-          <span className="stat">Moves: {moves}</span>
-          <span className="stat">Time: {formatTime(seconds)}</span>
-        </div>
-      </header>
-
-      {/* Difficulty selector */}
-      <div className="difficulty-row">
-        {(["easy", "medium", "hard"] as Difficulty[]).map((d) => (
-          <button
-            key={d}
-            type="button"
-            className={`diff-btn ${d === difficulty ? "diff-btn-active" : ""}`}
-            onClick={() => resetGame(d)}
-          >
-            {d === "easy" ? "4x3" : d === "medium" ? "4x4" : "6x4"}
-          </button>
-        ))}
-      </div>
-
-      {/* Best score */}
-      {best && (
-        <div className="best-score">
-          Best: {best.moves} moves in {formatTime(best.seconds)}
-        </div>
-      )}
-
-      {/* Card grid */}
-      <CardGrid columns={cols}>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            faceUp={card.faceUp}
-            matched={card.matched}
-            front={<span className="card-emoji">{card.symbol}</span>}
-            onClick={() => handleCardClick(card.id)}
-            disabled={card.faceUp || card.matched || flipped.length >= 2}
-          />
-        ))}
-      </CardGrid>
-
-      {/* Win overlay */}
-      {won && (
-        <div className="win-overlay">
-          <div className="win-card">
-            <h2 className="win-title">You Win!</h2>
-            <p className="win-stats">
-              {moves} moves in {formatTime(seconds)}
-            </p>
-            {isNewBest && <p className="win-best">New Best Score!</p>}
+    <GameShell
+      topbar={
+        <GameTopbar
+          title="Memory Match"
+          showScore={false}
+          stats={[
+            { label: "Moves", value: moves },
+            { label: "Time", value: formatTime(seconds) },
+          ]}
+        />
+      }
+    >
+      <div className="flex h-full flex-col">
+        {/* Difficulty selector */}
+        <div className="difficulty-row">
+          {(["easy", "medium", "hard"] as Difficulty[]).map((d) => (
             <button
+              key={d}
               type="button"
-              className="play-again-btn"
-              onClick={() => resetGame(difficulty)}
+              className={`diff-btn ${d === difficulty ? "diff-btn-active" : ""}`}
+              onClick={() => resetGame(d)}
             >
-              Play Again
+              {d === "easy" ? "4x3" : d === "medium" ? "4x4" : "6x4"}
             </button>
-          </div>
+          ))}
         </div>
-      )}
 
-    </div>
+        {/* Best score */}
+        {best && (
+          <div className="best-score">
+            Best: {best.moves} moves in {formatTime(best.seconds)}
+          </div>
+        )}
+
+        {/* Card grid */}
+        <CardGrid columns={cols}>
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              faceUp={card.faceUp}
+              matched={card.matched}
+              front={<span className="card-emoji">{card.symbol}</span>}
+              onClick={() => handleCardClick(card.id)}
+              disabled={card.faceUp || card.matched || flipped.length >= 2}
+            />
+          ))}
+        </CardGrid>
+
+        {/* Win overlay */}
+        {won && (
+          <div className="win-overlay">
+            <div className="win-card">
+              <h2 className="win-title">You Win!</h2>
+              <p className="win-stats">
+                {moves} moves in {formatTime(seconds)}
+              </p>
+              {isNewBest && <p className="win-best">New Best Score!</p>}
+              <button
+                type="button"
+                className="play-again-btn"
+                onClick={() => resetGame(difficulty)}
+              >
+                Play Again
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </GameShell>
   );
 }

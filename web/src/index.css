@@ -64,12 +64,6 @@ body {
   color: var(--ink);
 }
 
-.game-wrapper {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Mobile app frame: keep browser zoom and page overflow out of app gestures. */
 @layer base {
   html,
